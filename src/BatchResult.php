@@ -3,15 +3,17 @@
 namespace Http\Client\Util;
 
 use Http\Client\Exception;
+use Http\Client\BatchResult as BatchResultInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use UnexpectedValueException;
 
 /**
  * Responses and exceptions returned from parallel request execution
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class BatchResult implements \Http\Client\BatchResult
+final class BatchResult implements BatchResultInterface
 {
     /**
      * @var \SplObjectStorage
