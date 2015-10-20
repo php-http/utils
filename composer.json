@@ -1,8 +1,8 @@
 {
-    "name": "php-http/utility",
+    "name": "php-http/utils",
     "description": "HTTP Client utilities",
     "license": "MIT",
-    "keywords": ["http", "client"],
+    "keywords": ["http", "client", "php-http", "httplug"],
     "homepage": "http://php-http.org",
     "authors": [
         {
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Http\\Client\\Util\\": "src/"
+            "Http\\Client\\Utils\\": "src/"
         }
     },
     "scripts": {

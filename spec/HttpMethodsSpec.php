@@ -1,15 +1,15 @@
 <?php
 
-namespace spec\Http\Client\Util;
+namespace spec\Http\Client\Utils;
 
-use Http\Client\Util\HttpMethodsClient;
+use Http\Client\Utils\HttpMethodsClient;
 use PhpSpec\ObjectBehavior;
 
 class HttpMethodsSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beAnInstanceOf('spec\Http\Client\Util\HttpMethodsClientStub');
+        $this->beAnInstanceOf('spec\Http\Client\Utils\HttpMethodsClientStub');
     }
 
     function it_sends_a_get_request()

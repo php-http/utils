@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Http\Client\Util;
+namespace spec\Http\Client\Utils;
 
 use Http\Client\HttpPsrClient;
-use Http\Client\Util\BatchRequest;
+use Http\Client\Utils\BatchRequest;
 use PhpSpec\ObjectBehavior;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -12,7 +12,7 @@ class BatchRequestSpec extends ObjectBehavior
 {
     function let(HttpPsrClient $client)
     {
-        $this->beAnInstanceOf('spec\Http\Client\Util\BatchRequestStub', [$client]);
+        $this->beAnInstanceOf('spec\Http\Client\Utils\BatchRequestStub', [$client]);
     }
 
     function it_send_multiple_request_using_send_request(HttpPsrClient $client, RequestInterface $request1, RequestInterface $request2, ResponseInterface $response1, ResponseInterface $response2)
