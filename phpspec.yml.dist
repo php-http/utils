@@ -1,5 +1,5 @@
 suites:
-  utility_suite:
-    namespace: Http\Client\Util
-    psr4_prefix: Http\Client\Util
+  utils_suite:
+    namespace: Http\Client\Utils
+    psr4_prefix: Http\Client\Utils
 formatter.name: pretty
