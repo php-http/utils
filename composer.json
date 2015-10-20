@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": ">=5.4",
-        "php-http/client": "dev-utility_separation"
+        "php-http/client": "dev-utility_separation",
+        "php-http/message-factory": "dev-master@dev"
     },
     "require-dev": {
         "phpspec/phpspec": "^2.2",
