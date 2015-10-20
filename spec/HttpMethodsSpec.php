@@ -2,78 +2,75 @@
 
 namespace spec\Http\Client\Util;
 
-use Http\Client\Util\HttpMethods;
-use Http\Client\HttpMethodsClient;
+use Http\Client\Util\HttpMethodsClient;
 use PhpSpec\ObjectBehavior;
 
 class HttpMethodsSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beAnInstanceOf('spec\Http\Client\HttpMethodsStub');
+        $this->beAnInstanceOf('spec\Http\Client\Util\HttpMethodsClientStub');
     }
 
     function it_sends_a_get_request()
     {
-        $data = HttpMethodsStub::$requestData;
+        $data = HttpMethodsClientStub::$requestData;
 
         $this->get($data['uri'], $data['headers'], $data['options'])->shouldReturn(true);
     }
 
     function it_sends_a_head_request()
     {
-        $data = HttpMethodsStub::$requestData;
+        $data = HttpMethodsClientStub::$requestData;
 
         $this->head($data['uri'], $data['headers'], $data['options'])->shouldReturn(true);
     }
 
     function it_sends_a_trace_request()
     {
-        $data = HttpMethodsStub::$requestData;
+        $data = HttpMethodsClientStub::$requestData;
 
         $this->trace($data['uri'], $data['headers'], $data['options'])->shouldReturn(true);
     }
 
     function it_sends_a_post_request()
     {
-        $data = HttpMethodsStub::$requestData;
+        $data = HttpMethodsClientStub::$requestData;
 
         $this->post($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
     }
 
     function it_sends_a_put_request()
     {
-        $data = HttpMethodsStub::$requestData;
+        $data = HttpMethodsClientStub::$requestData;
 
         $this->put($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
     }
 
     function it_sends_a_patch_request()
     {
-        $data = HttpMethodsStub::$requestData;
+        $data = HttpMethodsClientStub::$requestData;
 
         $this->patch($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
     }
 
     function it_sends_a_delete_request()
     {
-        $data = HttpMethodsStub::$requestData;
+        $data = HttpMethodsClientStub::$requestData;
 
         $this->delete($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
     }
 
     function it_sends_a_options_request()
     {
-        $data = HttpMethodsStub::$requestData;
+        $data = HttpMethodsClientStub::$requestData;
 
         $this->options($data['uri'], $data['headers'], $data['body'], $data['options'])->shouldReturn(true);
     }
 }
 
-class HttpMethodsStub implements HttpMethodsClient
+class HttpMethodsClientStub extends HttpMethodsClient
 {
-    use HttpMethods;
-
     public static $requestData = [
         'uri'     => '/uri',
         'headers' => [
@@ -88,7 +85,7 @@ class HttpMethodsStub implements HttpMethodsClient
     /**
      * {@inheritdoc}
      */
-    public function send($method, $uri, array $headers = [], $body = null, array $options = [])
+    protected function send($method, $uri, array $headers = [], $body = null, array $options = [])
     {
         if (in_array($method, ['GET', 'HEAD', 'TRACE'])) {
             return $uri === self::$requestData['uri'] &&
