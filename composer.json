@@ -12,8 +12,8 @@
     ],
     "require": {
         "php": ">=5.4",
-        "php-http/httplug": "dev-utility_separation",
-        "php-http/message-factory": "dev-master@dev"
+        "php-http/httplug": "~1.0@dev",
+        "php-http/message-factory": "~0.2@dev"
     },
     "require-dev": {
         "phpspec/phpspec": "^2.2",
