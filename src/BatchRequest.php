@@ -20,27 +20,26 @@ trait BatchRequest
     /**
      * {@inheritdoc}
      */
-    abstract public function sendRequest(RequestInterface $request, array $options = []);
+    abstract public function sendRequest(RequestInterface $request);
 
     /**
      * {@inheritdoc}
      */
-    public function sendRequests(array $requests, array $options = [])
+    public function sendRequests(array $requests)
     {
-        $batchResult    = new BatchResult();
-        $batchException = new BatchException();
-        $batchException->setResult($batchResult);
+        $batchResult = new BatchResult();
 
         foreach ($requests as $request) {
             try {
-                $batchResult->addResponse($request, $this->sendRequest($request, $options));
+                $response = $this->sendRequest($request);
+                $batchResult = $batchResult->addResponse($request, $response);
             } catch (Exception $e) {
-                $batchException->addException($request, $e);
+                $batchResult = $batchResult->addException($request, $e);
             }
         }
 
-        if (count($batchException->getExceptions()) > 0) {
-            throw $batchException;
+        if ($batchResult->hasExceptions()) {
+            throw new BatchException($batchResult);
         }
 
         return $batchResult;

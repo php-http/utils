@@ -32,9 +32,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Returns all successful responses
-     *
-     * @return ResponseInterface[]
+     * {@inheritDoc}
      */
     public function getResponses()
     {
@@ -48,13 +46,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Returns a response of a request
-     *
-     * @param RequestInterface $request
-     *
-     * @return ResponseInterface
-     *
-     * @throws \UnexpectedValueException
+     * {@inheritDoc}
      */
     public function getResponseFor(RequestInterface $request)
     {
@@ -66,9 +58,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Checks if there are any successful responses at all
-     *
-     * @return boolean
+     * {@inheritDoc}
      */
     public function hasResponses()
     {
@@ -76,11 +66,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Checks if there is a response of a request
-     *
-     * @param RequestInterface $request
-     *
-     * @return ResponseInterface
+     * {@inheritDoc}
      */
     public function hasResponseFor(RequestInterface $request)
     {
@@ -88,14 +74,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Adds a response in an immutable way
-     *
-     * @param RequestInterface  $request
-     * @param ResponseInterface $response
-     *
-     * @return BatchResult
-     *
-     * @internal
+     * {@inheritDoc}
      */
     public function addResponse(RequestInterface $request, ResponseInterface $response)
     {
@@ -106,11 +85,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Checks if a request is successful
-     *
-     * @param RequestInterface $request
-     *
-     * @return boolean
+     * {@inheritDoc}
      */
     public function isSuccessful(RequestInterface $request)
     {
@@ -118,11 +93,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Checks if a request is failed
-     *
-     * @param RequestInterface $request
-     *
-     * @return boolean
+     * {@inheritDoc}
      */
     public function isFailed(RequestInterface $request)
     {
@@ -130,9 +101,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Returns all exceptions
-     *
-     * @return Exception[]
+     * {@inheritDoc}
      */
     public function getExceptions()
     {
@@ -146,13 +115,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Returns an exception for a request
-     *
-     * @param RequestInterface $request
-     *
-     * @return Exception
-     *
-     * @throws UnexpectedValueException
+     * {@inheritDoc}
      */
     public function getExceptionFor(RequestInterface $request)
     {
@@ -164,9 +127,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Checks if there are any exceptions at all
-     *
-     * @return boolean
+     * {@inheritDoc}
      */
     public function hasExceptions()
     {
@@ -174,11 +135,7 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Checks if there is an exception for a request
-     *
-     * @param RequestInterface $request
-     *
-     * @return boolean
+     * {@inheritDoc}
      */
     public function hasExceptionFor(RequestInterface $request)
     {
@@ -186,18 +143,19 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * Adds an exception
-     *
-     * @param RequestInterface  $request
-     * @param Exception         $exception
+     * {@inheritDoc}
      */
     public function addException(RequestInterface $request, Exception $exception)
     {
-        $this->exceptions->attach($request, $exception);
+        $new = clone $this;
+        $new->exceptions->attach($request, $exception);
+
+        return $new;
     }
 
     public function __clone()
     {
         $this->responses = clone $this->responses;
+        $this->exceptions = clone $this->exceptions;
     }
 }
