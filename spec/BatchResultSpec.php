@@ -39,9 +39,9 @@ class BatchResultSpec extends ObjectBehavior
         $new = $this->addResponse($request, $response);
 
         $this->shouldThrow('UnexpectedValueException')->duringGetResponseFor($request);
-        $this->hasResponseFor($request)->shouldReturn(false);
+        $this->isSuccessful($request)->shouldReturn(false);
         $new->getResponseFor($request)->shouldReturn($response);
-        $new->hasResponseFor($request)->shouldReturn(true);
+        $new->isSuccessful($request)->shouldReturn(true);
     }
 
     function it_keeps_exception_after_add_request(RequestInterface $request1, Exception $exception, RequestInterface $request2, ResponseInterface $response)
@@ -49,7 +49,11 @@ class BatchResultSpec extends ObjectBehavior
         $new = $this->addException($request1, $exception);
         $new = $new->addResponse($request2, $response);
 
+        $new->isSuccessful($request2)->shouldReturn(true);
+        $new->isFailed($request2)->shouldReturn(false);
         $new->getResponseFor($request2)->shouldReturn($response);
+        $new->isSuccessful($request1)->shouldReturn(false);
+        $new->isFailed($request1)->shouldReturn(true);
         $new->getExceptionFor($request1)->shouldReturn($exception);
     }
 }
