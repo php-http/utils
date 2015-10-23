@@ -9,12 +9,12 @@
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/php-http/adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-**HTTP Client interfaces.**
+**Utilities for using httplug clients.**
 
 
 ## Install
 
-Via Composer
+Via [Composer](https://getcomposer.org/)
 
 ``` bash
 $ composer require php-http/utils
@@ -22,6 +22,9 @@ $ composer require php-http/utils
 
 
 ## Usage
+
+The utilities provide the `HttpMethodsClient` which you can instantiate with a message factory and a HttpClient.
+The client provides convenience methods for HTTP requests without the need of acquiring a PSR-7 RequestInterface.
 
 
 ## Documentation
