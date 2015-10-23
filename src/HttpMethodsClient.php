@@ -5,6 +5,7 @@ namespace Http\Client\Utils;
 use Http\Client\Exception;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
@@ -18,10 +19,12 @@ use Psr\Http\Message\UriInterface;
  *     ->post('/bar')
  * ;
  *
+ * The client also exposes the sendRequest methods of the wrapped HttpClient.
+ *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  * @author David Buchmann <mail@davidbu.ch>
  */
-class HttpMethodsClient
+class HttpMethodsClient implements HttpClient
 {
     /**
      * @var HttpClient
@@ -171,9 +174,9 @@ class HttpMethodsClient
     }
 
     /**
-     * Sends a request
+     * Sends a request with any HTTP method.
      *
-     * @param string                      $method
+     * @param string                      $method  HTTP method to use.
      * @param string|UriInterface         $uri
      * @param array                       $headers
      * @param string|StreamInterface|null $body
@@ -182,14 +185,34 @@ class HttpMethodsClient
      *
      * @return ResponseInterface
      */
-    protected function send($method, $uri, array $headers = [], $body = null)
+    public function send($method, $uri, array $headers = [], $body = null)
     {
-        return $this->httpClient->sendRequest($this->messageFactory->createRequest(
+        return $this->sendRequest($this->messageFactory->createRequest(
             $method,
             $uri,
             '1.1',
             $headers,
             $body
         ));
+    }
+
+    /**
+     * Forward to the underlying HttpClient.
+     *
+     * {@inheritdoc}
+     */
+    public function sendRequest(RequestInterface $request)
+    {
+        $this->httpClient->sendRequest($request);
+    }
+
+    /**
+     * Forward to the underlying HttpClient.
+     *
+     * {@inheritdoc}
+     */
+    public function sendRequests(array $requests)
+    {
+        $this->httpClient->sendRequests($requests);
     }
 }
