@@ -203,7 +203,7 @@ class HttpMethodsClient implements HttpClient
      */
     public function sendRequest(RequestInterface $request)
     {
-        $this->httpClient->sendRequest($request);
+        return $this->httpClient->sendRequest($request);
     }
 
     /**
@@ -213,6 +213,6 @@ class HttpMethodsClient implements HttpClient
      */
     public function sendRequests(array $requests)
     {
-        $this->httpClient->sendRequests($requests);
+        return $this->httpClient->sendRequests($requests);
     }
 }
