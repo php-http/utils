@@ -7,11 +7,11 @@ use Http\Client\Exception\BatchException;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * Implements sending multiple request for client not supporting parallels requests
+ * Implements sending multiple request for client not supporting parallel requests.
  *
- * Internally, use the sendRequest method
+ * This implementation simply loops over the requests and uses sendRequest to send each of them.
  *
- * Should be used with Http\Client\HttpPsrClient
+ * Use when implementing Http\Client\HttpClient.
  *
  * @author Joel Wurtz <jwurtz@jolicode.com>
  */
