@@ -2,10 +2,13 @@
 
 namespace spec\Http\Client\Utils;
 
+use Http\Client\BatchResult;
 use Http\Client\HttpClient;
 use Http\Client\Utils\HttpMethodsClient;
 use Http\Message\MessageFactory;
 use PhpSpec\ObjectBehavior;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 class HttpMethodsClientSpec extends ObjectBehavior
 {
@@ -73,6 +76,22 @@ class HttpMethodsClientSpec extends ObjectBehavior
         $data = HttpMethodsClientStub::$requestData;
 
         $this->options($data['uri'], $data['headers'], $data['body'])->shouldReturn(true);
+    }
+
+    function it_should_send_request_with_underlying_client(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request, ResponseInterface $response)
+    {
+        $client->sendRequest($request)->shouldBeCalled()->willReturn($response);
+
+        $this->beConstructedWith($client, $messageFactory);
+        $this->sendRequest($request)->shouldReturn($response);
+    }
+
+    function it_should_send_requests_with_underlying_client(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request1, RequestInterface $request2, BatchResult $batchResult)
+    {
+        $client->sendRequests([$request1, $request2])->shouldBeCalled()->willReturn($batchResult);
+
+        $this->beConstructedWith($client, $messageFactory);
+        $this->sendRequests([$request1, $request2])->shouldReturn($batchResult);
     }
 }
 
