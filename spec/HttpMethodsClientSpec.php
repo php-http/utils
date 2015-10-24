@@ -78,7 +78,7 @@ class HttpMethodsClientSpec extends ObjectBehavior
         $this->options($data['uri'], $data['headers'], $data['body'])->shouldReturn(true);
     }
 
-    function it_should_send_request_with_underlying_client(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request, ResponseInterface $response)
+    function it_sends_request_with_underlying_client(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request, ResponseInterface $response)
     {
         $client->sendRequest($request)->shouldBeCalled()->willReturn($response);
 
@@ -86,7 +86,7 @@ class HttpMethodsClientSpec extends ObjectBehavior
         $this->sendRequest($request)->shouldReturn($response);
     }
 
-    function it_should_send_requests_with_underlying_client(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request1, RequestInterface $request2, BatchResult $batchResult)
+    function it_sends_requests_with_underlying_client(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request1, RequestInterface $request2, BatchResult $batchResult)
     {
         $client->sendRequests([$request1, $request2])->shouldBeCalled()->willReturn($batchResult);
 
