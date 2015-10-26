@@ -205,14 +205,4 @@ class HttpMethodsClient implements HttpClient
     {
         return $this->httpClient->sendRequest($request);
     }
-
-    /**
-     * Forward to the underlying HttpClient.
-     *
-     * {@inheritdoc}
-     */
-    public function sendRequests(array $requests)
-    {
-        return $this->httpClient->sendRequests($requests);
-    }
 }
