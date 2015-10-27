@@ -12,7 +12,6 @@ class BatchResultSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beAnInstanceOf('Http\Client\Utils\BatchResult');
-        $this->shouldImplement('Http\Client\BatchResult');
     }
 
     function it_is_immutable(RequestInterface $request, ResponseInterface $response)

@@ -85,14 +85,6 @@ class HttpMethodsClientSpec extends ObjectBehavior
         $this->beConstructedWith($client, $messageFactory);
         $this->sendRequest($request)->shouldReturn($response);
     }
-
-    function it_sends_requests_with_underlying_client(HttpClient $client, MessageFactory $messageFactory, RequestInterface $request1, RequestInterface $request2, BatchResult $batchResult)
-    {
-        $client->sendRequests([$request1, $request2])->shouldBeCalled()->willReturn($batchResult);
-
-        $this->beConstructedWith($client, $messageFactory);
-        $this->sendRequests([$request1, $request2])->shouldReturn($batchResult);
-    }
 }
 
 class HttpMethodsClientStub extends HttpMethodsClient

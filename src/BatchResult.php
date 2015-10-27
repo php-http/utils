@@ -3,7 +3,6 @@
 namespace Http\Client\Utils;
 
 use Http\Client\Exception;
-use Http\Client\BatchResult as BatchResultInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -12,7 +11,7 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-final class BatchResult implements BatchResultInterface
+final class BatchResult
 {
     /**
      * @var \SplObjectStorage
@@ -31,7 +30,9 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Checks if there are any successful responses at all.
+     *
+     * @return boolean
      */
     public function hasResponses()
     {
@@ -39,7 +40,9 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns all successful responses.
+     *
+     * @return ResponseInterface[]
      */
     public function getResponses()
     {
@@ -53,7 +56,11 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Checks if there is a successful response for a request.
+     *
+     * @param RequestInterface $request
+     *
+     * @return boolean
      */
     public function isSuccessful(RequestInterface $request)
     {
@@ -61,7 +68,13 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the response for a successful request.
+     *
+     * @param RequestInterface $request
+     *
+     * @return ResponseInterface
+     *
+     * @throws \UnexpectedValueException If request was not part of the batch or failed.
      */
     public function getResponseFor(RequestInterface $request)
     {
@@ -73,7 +86,12 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Adds a response in an immutable way.
+     *
+     * @param RequestInterface  $request
+     * @param ResponseInterface $response
+     *
+     * @return BatchResult the new BatchResult with this request-response pair added to it.
      */
     public function addResponse(RequestInterface $request, ResponseInterface $response)
     {
@@ -84,7 +102,9 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Checks if there are any unsuccessful requests at all.
+     *
+     * @return boolean
      */
     public function hasExceptions()
     {
@@ -92,7 +112,9 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns all exceptions for the unsuccessful requests.
+     *
+     * @return Exception[]
      */
     public function getExceptions()
     {
@@ -106,7 +128,11 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Checks if there is an exception for a request, meaning the request failed.
+     *
+     * @param RequestInterface $request
+     *
+     * @return boolean
      */
     public function isFailed(RequestInterface $request)
     {
@@ -114,7 +140,13 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the exception for a failed request.
+     *
+     * @param RequestInterface $request
+     *
+     * @return Exception
+     *
+     * @throws \UnexpectedValueException If request was not part of the batch or was successful.
      */
     public function getExceptionFor(RequestInterface $request)
     {
@@ -126,7 +158,12 @@ final class BatchResult implements BatchResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Adds an exception in an immutable way.
+     *
+     * @param RequestInterface  $request
+     * @param Exception         $exception
+     *
+     * @return BatchResult the new BatchResult with this request-exception pair added to it.
      */
     public function addException(RequestInterface $request, Exception $exception)
     {
