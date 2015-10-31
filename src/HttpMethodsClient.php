@@ -190,9 +190,9 @@ class HttpMethodsClient implements HttpClient
         return $this->sendRequest($this->messageFactory->createRequest(
             $method,
             $uri,
-            '1.1',
             $headers,
-            $body
+            $body,
+            '1.1'
         ));
     }
 
