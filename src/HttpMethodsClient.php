@@ -191,8 +191,7 @@ class HttpMethodsClient implements HttpClient
             $method,
             $uri,
             $headers,
-            $body,
-            '1.1'
+            $body
         ));
     }
 
