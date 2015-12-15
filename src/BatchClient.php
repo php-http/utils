@@ -16,8 +16,14 @@ use Psr\Http\Message\RequestInterface;
  */
 class BatchClient implements HttpClient
 {
+    /**
+     * @var HttpClient
+     */
     private $client;
 
+    /**
+     * @param HttpClient $client
+     */
     public function __construct(HttpClient $client)
     {
         $this->client = $client;
@@ -32,16 +38,16 @@ class BatchClient implements HttpClient
     }
 
     /**
-     * Send several requests. 
-     * 
+     * Send several requests.
+     *
      * You may not assume that the requests are executed in a particular order. If the order matters
      * for your application, use sendRequest sequentially.
-     * 
+     *
      * @param RequestInterface[] The requests to send
-     * 
+     *
      * @return BatchResult Containing one result per request.
-     * 
-     * @throws BatchException If one or more requests fails. The exception gives access to the 
+     *
+     * @throws BatchException If one or more requests fails. The exception gives access to the
      *                        BatchResult with a map of request to result for success, request to
      *                        exception for failures.
      */
