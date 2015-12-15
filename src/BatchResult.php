@@ -7,7 +7,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Responses and exceptions returned from parallel request execution
+ * Responses and exceptions returned from parallel request execution.
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
@@ -32,7 +32,7 @@ final class BatchResult
     /**
      * Checks if there are any successful responses at all.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasResponses()
     {
@@ -60,7 +60,7 @@ final class BatchResult
      *
      * @param RequestInterface $request
      *
-     * @return boolean
+     * @return bool
      */
     public function isSuccessful(RequestInterface $request)
     {
@@ -104,7 +104,7 @@ final class BatchResult
     /**
      * Checks if there are any unsuccessful requests at all.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasExceptions()
     {
@@ -132,7 +132,7 @@ final class BatchResult
      *
      * @param RequestInterface $request
      *
-     * @return boolean
+     * @return bool
      */
     public function isFailed(RequestInterface $request)
     {
@@ -160,8 +160,8 @@ final class BatchResult
     /**
      * Adds an exception in an immutable way.
      *
-     * @param RequestInterface  $request
-     * @param Exception         $exception
+     * @param RequestInterface $request
+     * @param Exception        $exception
      *
      * @return BatchResult the new BatchResult with this request-exception pair added to it.
      */

@@ -8,7 +8,7 @@ use Http\Client\Utils\Exception\BatchException;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * BatchClient allow to sends multiple request and retrieve a Batch Result
+ * BatchClient allow to sends multiple request and retrieve a Batch Result.
  *
  * This implementation simply loops over the requests and uses sendRequest with each of them.
  *

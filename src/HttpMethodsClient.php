@@ -12,7 +12,7 @@ use Psr\Http\Message\UriInterface;
 
 /**
  * Convenience HTTP client that integrates the MessageFactory in order to send
- * requests in the following form:
+ * requests in the following form:.
  *
  * $client
  *     ->get('/foo')
@@ -47,7 +47,7 @@ class HttpMethodsClient implements HttpClient
     }
 
     /**
-     * Sends a GET request
+     * Sends a GET request.
      *
      * @param string|UriInterface $uri
      * @param array               $headers
@@ -62,7 +62,7 @@ class HttpMethodsClient implements HttpClient
     }
 
     /**
-     * Sends an HEAD request
+     * Sends an HEAD request.
      *
      * @param string|UriInterface $uri
      * @param array               $headers
@@ -77,7 +77,7 @@ class HttpMethodsClient implements HttpClient
     }
 
     /**
-     * Sends a TRACE request
+     * Sends a TRACE request.
      *
      * @param string|UriInterface $uri
      * @param array               $headers
@@ -92,7 +92,7 @@ class HttpMethodsClient implements HttpClient
     }
 
     /**
-     * Sends a POST request
+     * Sends a POST request.
      *
      * @param string|UriInterface         $uri
      * @param array                       $headers
@@ -108,7 +108,7 @@ class HttpMethodsClient implements HttpClient
     }
 
     /**
-     * Sends a PUT request
+     * Sends a PUT request.
      *
      * @param string|UriInterface         $uri
      * @param array                       $headers
@@ -124,7 +124,7 @@ class HttpMethodsClient implements HttpClient
     }
 
     /**
-     * Sends a PATCH request
+     * Sends a PATCH request.
      *
      * @param string|UriInterface         $uri
      * @param array                       $headers
@@ -140,7 +140,7 @@ class HttpMethodsClient implements HttpClient
     }
 
     /**
-     * Sends a DELETE request
+     * Sends a DELETE request.
      *
      * @param string|UriInterface         $uri
      * @param array                       $headers
@@ -156,7 +156,7 @@ class HttpMethodsClient implements HttpClient
     }
 
     /**
-     * Sends an OPTIONS request
+     * Sends an OPTIONS request.
      *
      * @param string|UriInterface         $uri
      * @param array                       $headers
