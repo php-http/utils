@@ -1,10 +1,10 @@
 suites:
-  utils_suite:
-    namespace: Http\Client\Utils
-    psr4_prefix: Http\Client\Utils
+    utils_suite:
+        namespace: Http\Client\Utils
+        psr4_prefix: Http\Client\Utils
 formatter.name: pretty
 extensions:
-  - PhpSpec\Extension\CodeCoverageExtension
+    - PhpSpec\Extension\CodeCoverageExtension
 code_coverage:
-  format: clover
-  output: build/coverage.xml
+    format: clover
+    output: build/coverage.xml

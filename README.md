@@ -7,14 +7,12 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-http/utils.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/utils)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-http/utils.svg?style=flat-square)](https://packagist.org/packages/php-http/utils)
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/php-http/adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-**Utilities for using httplug clients.**
+**HTTP Client utilities for HTTPlug.**
 
 
 ## Install
 
-Via [Composer](https://getcomposer.org/)
+Via Composer
 
 ``` bash
 $ composer require php-http/utils
@@ -29,7 +27,7 @@ The client provides convenience methods for HTTP requests without the need of ac
 
 ## Documentation
 
-Please see the [official documentation](http://php-http.readthedocs.org/en/latest/).
+Please see the [official documentation](http://docs.httplug.io).
 
 
 ## Testing
@@ -41,12 +39,13 @@ $ composer test
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
 
 
 ## Security
 
-If you discover any security related issues, please contact us at [security@php-http.org](mailto:security@php-http.org).
+If you discover any security related issues, please contact us at [security@httplug.io](mailto:security@httplug.io)
+or [security@php-http.org](mailto:security@php-http.org).
 
 
 ## License

@@ -1,9 +1,9 @@
 {
     "name": "php-http/utils",
-    "description": "HTTP Client utilities",
+    "description": "HTTP Client utilities for HTTPlug",
     "license": "MIT",
-    "keywords": ["http", "client", "php-http", "httplug"],
-    "homepage": "http://php-http.org",
+    "keywords": ["http", "client", "php-http", "httplug", "utils"],
+    "homepage": "http://httplug.io",
     "authors": [
         {
             "name": "Márk Sági-Kazár",
@@ -13,10 +13,10 @@
     "require": {
         "php": ">=5.4",
         "php-http/httplug": "1.0.0-alpha2",
-        "php-http/message-factory": "^0.3@dev"
+        "php-http/message-factory": "^1.0"
     },
     "require-dev": {
-        "phpspec/phpspec": "^2.2",
+        "phpspec/phpspec": "^2.4",
         "henrikbjorn/phpspec-code-coverage" : "^1.0"
     },
     "autoload": {
@@ -30,7 +30,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1-dev"
+            "dev-master": "0.2-dev"
         }
     }
 }
