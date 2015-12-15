@@ -12,7 +12,7 @@ use Psr\Http\Message\UriInterface;
 
 /**
  * Convenience HTTP client that integrates the MessageFactory in order to send
- * requests in the form of
+ * requests in the following form:
  *
  * $client
  *     ->get('/foo')
@@ -37,8 +37,6 @@ class HttpMethodsClient implements HttpClient
     private $messageFactory;
 
     /**
-     * Instantiate the message client with a client and a message factory.
-     *
      * @param HttpClient     $httpClient     The client to send requests with.
      * @param MessageFactory $messageFactory The message factory to create requests.
      */
