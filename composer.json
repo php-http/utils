@@ -2,7 +2,7 @@
     "name": "php-http/utils",
     "description": "HTTP Client utilities for HTTPlug",
     "license": "MIT",
-    "keywords": ["http", "client", "php-http", "httplug", "utils"],
+    "keywords": ["http", "client", "httplug", "utils"],
     "homepage": "http://httplug.io",
     "authors": [
         {
