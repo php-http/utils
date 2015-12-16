@@ -4,8 +4,6 @@ namespace Http\Client\Utils\StreamFactory;
 
 use Http\Message\StreamFactory;
 use Psr\Http\Message\StreamInterface;
-use Zend\Diactoros\Request;
-use Zend\Diactoros\Response;
 use Zend\Diactoros\Stream;
 
 /**

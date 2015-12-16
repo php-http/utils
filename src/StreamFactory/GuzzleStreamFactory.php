@@ -3,7 +3,6 @@
 namespace Http\Client\Utils\StreamFactory;
 
 use Http\Message\StreamFactory;
-use Psr\Http\Message\StreamInterface;
 
 /**
  * Creates Guzzle streams.
