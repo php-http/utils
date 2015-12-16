@@ -1,6 +1,13 @@
 # Change Log
 
 
+## 0.2.0 - 2015-12-16
+
+### Added
+
+- Message factory implementations (moved from php-http/discovery)
+
+
 ## 0.1.0 - 2015-12-15
 
 ### Added
