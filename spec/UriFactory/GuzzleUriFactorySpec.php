@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\Http\Client\Utils\UriFactory;
+namespace spec\Http\Utils\UriFactory;
 
 use Psr\Http\Message\UriInterface;
 use PhpSpec\ObjectBehavior;
-use spec\Http\Client\Utils\UriFactoryBehavior;
+use spec\Http\Utils\UriFactoryBehavior;
 
 class GuzzleUriFactorySpec extends ObjectBehavior
 {
@@ -12,7 +12,7 @@ class GuzzleUriFactorySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Http\Client\Utils\UriFactory\GuzzleUriFactory');
+        $this->shouldHaveType('Http\Utils\UriFactory\GuzzleUriFactory');
     }
 
     /**

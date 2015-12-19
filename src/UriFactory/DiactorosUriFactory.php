@@ -1,6 +1,6 @@
 <?php
 
-namespace Http\Client\Utils\UriFactory;
+namespace Http\Utils\UriFactory;
 
 use Http\Message\UriFactory;
 use Psr\Http\Message\UriInterface;

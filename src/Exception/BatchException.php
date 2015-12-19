@@ -1,10 +1,10 @@
 <?php
 
-namespace Http\Client\Utils\Exception;
+namespace Http\Utils\Exception;
 
 use Http\Client\Exception;
 use Http\Client\Exception\TransferException;
-use Http\Client\Utils\BatchResult;
+use Http\Utils\BatchResult;
 
 /**
  * This exception is thrown when HttpClient::sendRequests led to at least one failure.

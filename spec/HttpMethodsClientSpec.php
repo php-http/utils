@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\Http\Client\Utils;
+namespace spec\Http\Utils;
 
 use Http\Client\BatchResult;
 use Http\Client\HttpClient;
-use Http\Client\Utils\HttpMethodsClient;
+use Http\Utils\HttpMethodsClient;
 use Http\Message\MessageFactory;
 use PhpSpec\ObjectBehavior;
 use Psr\Http\Message\RequestInterface;
@@ -15,7 +15,7 @@ class HttpMethodsClientSpec extends ObjectBehavior
     function let(HttpClient $client, MessageFactory $messageFactory)
     {
         $this->beAnInstanceOf(
-            'spec\Http\Client\Utils\HttpMethodsClientStub', [
+            'spec\Http\Utils\HttpMethodsClientStub', [
                 $client,
                 $messageFactory
             ]

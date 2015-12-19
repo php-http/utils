@@ -1,6 +1,6 @@
 <?php
 
-namespace Http\Client\Utils\MessageFactory;
+namespace Http\Utils\MessageFactory;
 
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;

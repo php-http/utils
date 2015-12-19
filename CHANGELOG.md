@@ -1,5 +1,8 @@
 # Change Log
 
+### Upcoming release
+
+- Switch to `Http\Utils` namespace (instead of `Http\Client\Utils`)
 
 ### 0.2.1 - 2015-12-17
 

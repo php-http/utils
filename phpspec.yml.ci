@@ -1,7 +1,7 @@
 suites:
     utils_suite:
-        namespace: Http\Client\Utils
-        psr4_prefix: Http\Client\Utils
+        namespace: Http\Utils
+        psr4_prefix: Http\Utils
 formatter.name: pretty
 extensions:
     - PhpSpec\Extension\CodeCoverageExtension
