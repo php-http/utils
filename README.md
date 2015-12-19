@@ -7,7 +7,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-http/utils.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/utils)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-http/utils.svg?style=flat-square)](https://packagist.org/packages/php-http/utils)
 
-**HTTP Client utilities for HTTPlug.**
+**HTTP Client utilities.**
 
 
 ## Install
@@ -19,10 +19,13 @@ $ composer require php-http/utils
 ```
 
 
-## Usage
+## Contents
 
-The utilities provide the `HttpMethodsClient` which you can instantiate with a message factory and a HttpClient.
-The client provides convenience methods for HTTP requests without the need of acquiring a PSR-7 RequestInterface.
+The utilities are useful classes for users of HTTPlug and the `php-http/message-factory` library.
+
+* `HttpMethodsClient` - Client decorator that provides convenience methods for HTTP requests without the need of acquiring a PSR-7 RequestInterface;
+* `BatchClient` - Client decorator to send a list of requests in one call;
+* Factory implementations for Guzzle6 and Diactoros.
 
 
 ## Documentation
