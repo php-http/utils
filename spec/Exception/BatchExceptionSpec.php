@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Http\Client\Utils\Exception;
+namespace spec\Http\Utils\Exception;
 
-use Http\Client\Utils\BatchResult;
+use Http\Utils\BatchResult;
 use Http\Client\Exception;
 use PhpSpec\ObjectBehavior;
 
@@ -16,7 +16,7 @@ class BatchExceptionSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Http\Client\Utils\Exception\BatchException');
+        $this->shouldHaveType('Http\Utils\Exception\BatchException');
     }
 
     function it_is_a_runtime_exception()
@@ -31,7 +31,6 @@ class BatchExceptionSpec extends ObjectBehavior
 
     function it_has_a_batch_result()
     {
-        $this->getResult()->shouldHaveType('Http\Client\Utils\BatchResult');
+        $this->getResult()->shouldHaveType('Http\Utils\BatchResult');
     }
 }
- 

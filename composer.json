@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Http\\Client\\Utils\\": "src/"
+            "Http\\Utils\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "spec\\Http\\Client\\Utils\\": "spec/"
+            "spec\\Http\\Utils\\": "spec/"
         }
     },
     "scripts": {

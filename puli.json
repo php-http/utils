@@ -3,7 +3,7 @@
     "bindings": {
         "064d003d-78a1-48c4-8f3b-1f92ff25da69": {
             "_class": "Puli\\Discovery\\Binding\\ClassBinding",
-            "class": "Http\\Client\\Utils\\MessageFactory\\DiactorosMessageFactory",
+            "class": "Http\\Utils\\MessageFactory\\DiactorosMessageFactory",
             "type": "Http\\Message\\MessageFactory",
             "parameters": {
                 "depends": "Zend\\Diactoros\\Request"
@@ -11,7 +11,7 @@
         },
         "2438c2d0-0658-441f-8855-ddaf0f87d54d": {
             "_class": "Puli\\Discovery\\Binding\\ClassBinding",
-            "class": "Http\\Client\\Utils\\MessageFactory\\GuzzleMessageFactory",
+            "class": "Http\\Utils\\MessageFactory\\GuzzleMessageFactory",
             "type": "Http\\Message\\MessageFactory",
             "parameters": {
                 "depends": "GuzzleHttp\\Psr7\\Request"
@@ -19,7 +19,7 @@
         },
         "273a34f9-62f4-4ba1-9801-b1284d49ff89": {
             "_class": "Puli\\Discovery\\Binding\\ClassBinding",
-            "class": "Http\\Client\\Utils\\StreamFactory\\GuzzleStreamFactory",
+            "class": "Http\\Utils\\StreamFactory\\GuzzleStreamFactory",
             "type": "Http\\Message\\StreamFactory",
             "parameters": {
                 "depends": "GuzzleHttp\\Psr7\\Stream"
@@ -27,7 +27,7 @@
         },
         "304b83db-b594-4d83-ae75-1f633adf92f7": {
             "_class": "Puli\\Discovery\\Binding\\ClassBinding",
-            "class": "Http\\Client\\Utils\\UriFactory\\GuzzleUriFactory",
+            "class": "Http\\Utils\\UriFactory\\GuzzleUriFactory",
             "type": "Http\\Message\\UriFactory",
             "parameters": {
                 "depends": "GuzzleHttp\\Psr7\\Uri"
@@ -35,7 +35,7 @@
         },
         "3f4bc1cd-aa95-4702-9fa7-65408e471691": {
             "_class": "Puli\\Discovery\\Binding\\ClassBinding",
-            "class": "Http\\Client\\Utils\\UriFactory\\DiactorosUriFactory",
+            "class": "Http\\Utils\\UriFactory\\DiactorosUriFactory",
             "type": "Http\\Message\\UriFactory",
             "parameters": {
                 "depends": "Zend\\Diactoros\\Uri"
@@ -43,7 +43,7 @@
         },
         "95c1be8f-39fe-4abd-8351-92cb14379a75": {
             "_class": "Puli\\Discovery\\Binding\\ClassBinding",
-            "class": "Http\\Client\\Utils\\StreamFactory\\DiactorosStreamFactory",
+            "class": "Http\\Utils\\StreamFactory\\DiactorosStreamFactory",
             "type": "Http\\Message\\StreamFactory",
             "parameters": {
                 "depends": "Zend\\Diactoros\\Stream"

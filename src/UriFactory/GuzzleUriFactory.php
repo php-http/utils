@@ -1,6 +1,6 @@
 <?php
 
-namespace Http\Client\Utils\UriFactory;
+namespace Http\Utils\UriFactory;
 
 use GuzzleHttp\Psr7;
 use Http\Message\UriFactory;

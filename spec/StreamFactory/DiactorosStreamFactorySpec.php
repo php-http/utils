@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\Http\Client\Utils\StreamFactory;
+namespace spec\Http\Utils\StreamFactory;
 
 use Zend\Diactoros\Stream;
 use PhpSpec\ObjectBehavior;
-use spec\Http\Client\Utils\StreamFactoryBehavior;
+use spec\Http\Utils\StreamFactoryBehavior;
 
 class DiactorosStreamFactorySpec extends ObjectBehavior
 {
@@ -12,7 +12,7 @@ class DiactorosStreamFactorySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Http\Client\Utils\StreamFactory\DiactorosStreamFactory');
+        $this->shouldHaveType('Http\Utils\StreamFactory\DiactorosStreamFactory');
     }
 
     function it_creates_a_stream_from_stream()

@@ -1,8 +1,8 @@
 <?php
 
-namespace Http\Client\Utils\MessageFactory;
+namespace Http\Utils\MessageFactory;
 
-use Http\Client\Utils\StreamFactory\DiactorosStreamFactory;
+use Http\Utils\StreamFactory\DiactorosStreamFactory;
 use Http\Message\MessageFactory;
 use Zend\Diactoros\Request;
 use Zend\Diactoros\Response;

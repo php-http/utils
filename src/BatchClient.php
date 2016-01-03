@@ -1,10 +1,10 @@
 <?php
 
-namespace Http\Client\Utils;
+namespace Http\Utils;
 
 use Http\Client\Exception;
 use Http\Client\HttpClient;
-use Http\Client\Utils\Exception\BatchException;
+use Http\Utils\Exception\BatchException;
 use Psr\Http\Message\RequestInterface;
 
 /**

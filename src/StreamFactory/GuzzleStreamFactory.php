@@ -1,6 +1,6 @@
 <?php
 
-namespace Http\Client\Utils\StreamFactory;
+namespace Http\Utils\StreamFactory;
 
 use Http\Message\StreamFactory;
 

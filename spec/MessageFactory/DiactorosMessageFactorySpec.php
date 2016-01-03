@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Http\Client\Utils\MessageFactory;
+namespace spec\Http\Utils\MessageFactory;
 
 use PhpSpec\ObjectBehavior;
-use spec\Http\Client\Utils\MessageFactoryBehavior;
+use spec\Http\Utils\MessageFactoryBehavior;
 
 class DiactorosMessageFactorySpec extends ObjectBehavior
 {
@@ -11,6 +11,6 @@ class DiactorosMessageFactorySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Http\Client\Utils\MessageFactory\DiactorosMessageFactory');
+        $this->shouldHaveType('Http\Utils\MessageFactory\DiactorosMessageFactory');
     }
 }

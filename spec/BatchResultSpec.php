@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Http\Client\Utils;
+namespace spec\Http\Utils;
 
 use Http\Client\Exception;
 use Psr\Http\Message\RequestInterface;
@@ -11,7 +11,7 @@ class BatchResultSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->beAnInstanceOf('Http\Client\Utils\BatchResult');
+        $this->beAnInstanceOf('Http\Utils\BatchResult');
     }
 
     function it_is_immutable(RequestInterface $request, ResponseInterface $response)
@@ -19,7 +19,7 @@ class BatchResultSpec extends ObjectBehavior
         $new = $this->addResponse($request, $response);
 
         $this->getResponses()->shouldReturn([]);
-        $new->shouldHaveType('Http\Client\Utils\BatchResult');
+        $new->shouldHaveType('Http\Utils\BatchResult');
         $new->getResponses()->shouldReturn([$response]);
     }
 

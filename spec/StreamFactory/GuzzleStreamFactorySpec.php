@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\Http\Client\Utils\StreamFactory;
+namespace spec\Http\Utils\StreamFactory;
 
 use GuzzleHttp\Psr7\Stream;
 use PhpSpec\ObjectBehavior;
-use spec\Http\Client\Utils\StreamFactoryBehavior;
+use spec\Http\Utils\StreamFactoryBehavior;
 
 class GuzzleStreamFactorySpec extends ObjectBehavior
 {
@@ -12,7 +12,7 @@ class GuzzleStreamFactorySpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType('Http\Client\Utils\StreamFactory\GuzzleStreamFactory');
+        $this->shouldHaveType('Http\Utils\StreamFactory\GuzzleStreamFactory');
     }
 
     public function it_creates_a_stream_from_stream()
